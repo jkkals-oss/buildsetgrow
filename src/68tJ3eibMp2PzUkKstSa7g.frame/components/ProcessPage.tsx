@@ -8,84 +8,84 @@ import { Reveal } from './motion'
 const PHASES = [
   {
     n: '01', slug: 'understand', title: 'Understand', line: 'Learn how the business actually runs.',
-    intro: 'Before recommending technology, we trace how work moves through your business, from the first customer interaction through delivery, follow up, and reporting. The aim is to identify the operational problem, not just its visible symptoms.',
+    intro: 'We look at how your business works across operations, sales, marketing, customer experience, and the channels that bring people to you. That includes the tools, decisions, and handoffs behind everyday work, so we can identify the underlying problem rather than just its symptoms.',
     work: [
-      'Walk through real customer, order, and internal service journeys with the people who perform them.',
+      'Follow real customer journeys, internal processes, campaigns, and events with the people responsible for them.',
       'Inventory existing applications, spreadsheets, databases, integrations, and manual workarounds.',
       'Map the data captured at each step, where it is duplicated, and where it becomes unreliable or difficult to access.',
       'Identify recurring handoffs, approval bottlenecks, undocumented decisions, and work that depends on one person.',
-      'Establish the current baseline: processing time, error frequency, service capacity, and relevant commercial impact.',
+      'Establish useful measures such as time spent, service capacity, customer response, campaign performance, and commercial impact.',
     ],
-    example: 'For example: we might follow a customer request through intake, scheduling, fulfillment, invoicing, and reporting. Along the way, we might discover that three departments enter the same data repeatedly and no one can see the complete status.',
-    output: 'A map of current workflows and systems map, key friction points, data dependencies, and a prioritized problem statement.',
+    example: 'For example: we might trace an event campaign from planning and promotion through registration, attendance, sales follow up, and reporting, then discover that customer information is scattered across several teams and tools.',
+    output: 'A map of the relevant business workflows, channels, and systems, with key friction points, data dependencies, and a prioritized problem statement.',
   },
   {
     n: '02', slug: 'define', title: 'Define', line: 'Choose what should change and what should stay.',
-    intro: 'Not every inefficiency requires new software. We separate process problems from technical limitations and decide which existing capabilities to keep, connect, simplify, or replace.',
+    intro: 'Not every business challenge calls for new software. We determine whether the greatest opportunity is in the process, customer experience, channel coordination, data, or supporting technology, then define what should change.',
     work: [
       'Translate operational findings into specific business requirements and measurable outcomes.',
-      'Decide whether the right response is a process change, system integration, automation, custom application, or a combination.',
+      'Decide whether the right response is a workflow change, improved campaign coordination, a system integration, automation, custom software, or a combination.',
       'Evaluate existing software capabilities, integration constraints, permissions, and data availability.',
       'Define scope boundaries, ownership, dependencies, implementation risks, and delivery sequence.',
-      'Prioritize improvements according to their effect on business performance and operating complexity.',
+      'Prioritize improvements by their impact on customers, revenue opportunities, team capacity, and operating complexity.',
     ],
-    example: 'For example: instead of replacing the CRM, we may connect it to scheduling and billing tools, eliminate duplicate entry, and add a single operational view for employees.',
+    example: 'For example: a business promoting events across social channels and email may need a coordinated campaign workflow, shared brand assets, and a clear path from registration to customer follow up rather than another marketing tool.',
     output: 'An agreed solution scope, decision rationale, prioritized requirements, success measures, and delivery plan.',
   },
   {
     n: '03', slug: 'design', title: 'Design', line: 'Make the future workflow visible before building it.',
-    intro: 'We design the complete experience: the decisions people make, the data they need, the actions the software takes, and what happens when the normal workflow breaks.',
+    intro: 'We design how the improved experience should work for customers and employees, from brand touchpoints and campaigns to the workflows and systems behind them. We make responsibilities, information, and decision points clear before implementation.',
     work: [
-      'Map journeys for the future workflow for employees, managers, customers, and administrators.',
-      'Create interface flows, navigation, dashboards, forms, approval screens, and report structures.',
+      'Map the intended experience for customers, employees, marketing teams, managers, and administrators.',
+      'Design the relevant interfaces, campaign and content workflows, registration forms, approval steps, dashboards, and reporting views.',
       'Specify the underlying data model, system connections, business rules, permissions, and audit requirements.',
       'Design exception handling: missing data, failed integrations, conflicting records, or approvals requiring a person.',
       'Identify where automation based on defined rules is sufficient and where analysis assisted by AI or recommendations offer material value.',
       'Walk through representative use cases with stakeholders before finalizing implementation.',
     ],
-    example: 'For example: an operations manager sees an exception queue instead of checking multiple spreadsheets; the system assembles relevant information and routes only unresolved cases for review.',
+    example: 'For example: we might design an event planning workspace that connects the campaign calendar, approved brand materials, registrations, vendor tasks, and attendee follow up in one place.',
     output: 'A solution blueprint including screen flows, data and integration specifications, automation logic, and an implementation roadmap.',
   },
   {
     n: '04', slug: 'build', title: 'Build', line: 'Develop and connect the parts that make it work.',
-    intro: 'We develop the agreed capabilities around your existing technology and operating model, organizing delivery into working increments that can be reviewed against real scenarios.',
+    intro: 'We put the agreed solution into practice using the systems and channels your business already relies on. That might mean connected software, automated workflows, or the tools and processes that help teams deliver consistent customer experiences.',
     work: [
-      'Implement the application, user interfaces, integrations, and authorized data access.',
+      'Build or configure the agreed applications, interfaces, integrations, and authorized data access.',
       'Normalize and reconcile information from connected sources so different systems can work together.',
-      'Configure workflow rules, triggers, notifications, approvals, and user access controls.',
+      'Connect relevant marketing, customer, and operating workflows with appropriate rules, notifications, approvals, and access controls.',
       'Develop recommendations assisted by AI or predictive features only where appropriate to the defined outcome.',
       'Test complete journeys, including errors, exceptions, permissions, and data changes, rather than testing isolated screens alone.',
       'Demonstrate working software at defined checkpoints and resolve issues before release.',
     ],
-    example: 'For example: a new order automatically updates the relevant records, notifies the next team, creates a status that managers can view, and flags missing information before the work moves forward.',
+    example: 'For example: when someone registers for an event, the appropriate team receives the details, attendance records stay connected to the customer profile, and follow up tasks are created without manual copying.',
     output: 'Working software, connected workflows, tested capabilities, and technical documentation for the agreed solution.',
   },
   {
     n: '05', slug: 'implement', title: 'Implement', line: 'Put the new way of working into operation.',
-    intro: 'A working application is not the same as an adopted operating system. Implementation makes the solution usable, dependable, and understood by the people relying on it.',
+    intro: 'A solution only creates value when people can use it consistently. We help teams adopt the new workflows, whether they involve internal operations, brand coordination, marketing campaigns, or customer engagement.',
     work: [
       'Prepare the production environment, account permissions, and approved data migration or configuration.',
       'Test real complete workflows with the employees who will operate the system.',
       'Define responsibilities for routine use, exception handling, technical support, and escalation.',
-      'Create practical documentation and user guidance; train teams on their new workflows.',
+      'Create practical guidance and train teams on their new workflows, responsibilities, and customer touchpoints.',
       'Coordinate launch and closely review early data quality, workflow completion, errors, and adoption.',
       'Complete the agreed handover or transition into support after launch, depending on the service selected.',
     ],
-    example: 'For example: staff rehearse what happens when a customer updates an order after approval, including who receives the change, what is updated, and how the exception is resolved.',
+    example: 'For example: an events team walks through publishing a campaign, updating an event schedule, sharing approved brand assets, and handling last minute attendee changes before launch.',
     output: 'A deployed and configured solution, operational guidance, training materials, launch checks, and a clear support or handover plan.',
   },
   {
     n: '06', slug: 'improve', title: 'Improve', line: 'Measure performance and evolve deliberately.',
-    intro: 'After launch, we compare what the system is doing with the business outcomes agreed at the start. Improvements are selected because they solve a new problem or produce a measurable gain, rather than simply adding features that sound impressive.',
+    intro: 'After launch, we assess whether the changes are helping the business operate, engage customers, and grow more effectively. We focus improvements on results rather than adding technology or activity for its own sake.',
     work: [
-      'Review workflow completion time, manual intervention, exception rates, reliability, and adoption.',
+      'Review relevant measures such as workflow completion, reliability, adoption, campaign engagement, customer follow up, and team capacity.',
       'Compare results against the original baseline where credible data is available.',
       'Identify remaining friction, new requirements, and opportunities to improve data visibility or automation.',
       'Distinguish maintenance and defect resolution from new feature development.',
       'For Grow engagements, agree quarterly priorities and deliver enhancements within contracted capacity.',
       'Document the results, tradeoffs, and next recommended actions.',
     ],
-    example: 'For example: if requests are now processed faster but approval delays remain, we can use the recorded workflow data to identify and redesign that specific bottleneck.',
+    example: 'For example: if an event attracts registrations but few attendees become customers, we can examine the handoff between marketing and sales and improve the follow up workflow.',
     output: 'A performance review against agreed objectives and, where included in your service, an ongoing enhancement roadmap.',
   },
 ] as const
@@ -111,7 +111,7 @@ const SERVICES = [
 export function ProcessPage() {
   useEffect(() => {
     document.title = 'How We Work | BuildSetGrow'
-    const desc = 'See how BuildSetGrow diagnoses operational complexity, designs connected systems, builds bespoke software, supports implementation, and measures results.'
+    const desc = 'See how BuildSetGrow connects business operations, marketing, brand experiences, and events with practical workflows, software, and implementation.'
     let meta = document.querySelector<HTMLMetaElement>('meta[name="description"]')
     if (!meta) {
       meta = document.createElement('meta')
@@ -136,10 +136,10 @@ export function ProcessPage() {
                 Better technology begins with <em className="font-light text-ember">understanding your business.</em>
               </Headline>
               <div className="mt-9 grid gap-8 lg:grid-cols-12">
-                <p className="max-w-2xl text-[17px] leading-[1.8] text-stone lg:col-span-7">Businesses grow. New tools appear, responsibilities shift, and people create manual workarounds to keep things moving. We trace how work actually gets done, design the right changes, and build systems that make the business more connected and easier to operate.</p>
+                <p className="max-w-2xl text-[17px] leading-[1.8] text-stone lg:col-span-7">Businesses grow across many fronts: operations, customer relationships, marketing, brand, and events. We look at how those activities work together, identify what is getting in the way, and design practical solutions using the processes and technology that best fit the business.</p>
                 <div className="flex items-start gap-3 border-l border-ember/45 pl-5 lg:col-span-4 lg:col-start-9">
                   <span className="font-display text-[48px] leading-none text-ember">06</span>
-                  <p className="pt-1 text-sm leading-relaxed text-stone">Clear phases. Concrete deliverables. One connected path from diagnosis to working software and measurable improvement.</p>
+                  <p className="pt-1 text-sm leading-relaxed text-stone">Clear phases. Concrete deliverables. One connected path from business diagnosis to implementation and measurable improvement.</p>
                 </div>
               </div>
               <a href="#phases" className="mt-12 inline-flex items-center gap-3 rounded-full border border-ember/60 px-6 py-3.5 text-[14px] font-medium text-ivory transition-colors hover:bg-ember hover:text-ink">Explore the process <ChevronDown size={16}/></a>
