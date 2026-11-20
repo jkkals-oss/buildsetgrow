@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { ArrowUpRight, Workflow } from 'lucide-react'
 
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
@@ -63,7 +62,6 @@ export default function Home(props: Props) {
             previewState={formState as 'default' | 'errors' | 'submitted'}
           />
         </main>
-        <a href="/how-we-work" aria-label="Explore how BuildSetGrow works" className="group fixed bottom-5 left-4 z-40 inline-flex items-center gap-2 rounded-full border border-ivory/15 bg-ember px-3.5 py-2.5 text-[12px] font-semibold text-ink shadow-[0_6px_20px_rgba(0,0,0,0.25)] transition-[transform,background-color] duration-200 hover:-translate-y-0.5 hover:bg-terracotta focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember sm:bottom-7 sm:left-7 sm:px-4 sm:text-[13px]"><Workflow size={16} aria-hidden />How We Work<ArrowUpRight size={16} aria-hidden className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></a>
         <Footer />
       </div>
     </MotionProvider>
