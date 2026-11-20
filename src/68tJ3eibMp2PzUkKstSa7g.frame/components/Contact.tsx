@@ -118,7 +118,7 @@ export function Contact({
                   <h3 className="mt-6 font-display text-[32px] leading-tight text-ivory">{status.kind === 'preview' ? 'Form preview' : `Thank you, ${status.name}.`}</h3>
                   {status.kind === 'done' ? (
                     <p className="mt-3 max-w-md text-[15px] leading-relaxed text-stone">
-                      Your inquiry has been received by our form service. We'll reply to the work email you provided.
+                      Your inquiry has been received. We'll reply to the work email you provided.
                     </p>
                   ) : (
                     <p className="mt-3 max-w-md text-[15px] leading-relaxed text-stone">
