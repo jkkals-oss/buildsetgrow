@@ -8,19 +8,19 @@ import { Reveal } from './motion'
 const PHASES = [
   {
     n: '01', slug: 'understand', title: 'Understand', line: 'Learn how the business actually runs.',
-    intro: 'Before recommending technology, we trace how work moves through your business—from the first customer interaction to delivery, follow-up, and reporting. The aim is to identify the operational problem, not just its visible symptoms.',
+    intro: 'Before recommending technology, we trace how work moves through your business, from the first customer interaction through delivery, follow up, and reporting. The aim is to identify the operational problem, not just its visible symptoms.',
     work: [
-      'Walk through real customer, order, and internal-service journeys with the people who perform them.',
+      'Walk through real customer, order, and internal service journeys with the people who perform them.',
       'Inventory existing applications, spreadsheets, databases, integrations, and manual workarounds.',
       'Map the data captured at each step, where it is duplicated, and where it becomes unreliable or difficult to access.',
       'Identify recurring handoffs, approval bottlenecks, undocumented decisions, and work that depends on one person.',
       'Establish the current baseline: processing time, error frequency, service capacity, and relevant commercial impact.',
     ],
-    example: 'For example: we might follow a customer request through intake, scheduling, fulfillment, invoicing, and reporting—finding that three departments re-enter the same data and no one can see the complete status.',
-    output: 'A current-state workflow and systems map, key friction points, data dependencies, and a prioritized problem statement.',
+    example: 'For example: we might follow a customer request through intake, scheduling, fulfillment, invoicing, and reporting. Along the way, we might discover that three departments enter the same data repeatedly and no one can see the complete status.',
+    output: 'A map of current workflows and systems map, key friction points, data dependencies, and a prioritized problem statement.',
   },
   {
-    n: '02', slug: 'define', title: 'Define', line: 'Choose what should change—and what should stay.',
+    n: '02', slug: 'define', title: 'Define', line: 'Choose what should change and what should stay.',
     intro: 'Not every inefficiency requires new software. We separate process problems from technical limitations and decide which existing capabilities to keep, connect, simplify, or replace.',
     work: [
       'Translate operational findings into specific business requirements and measurable outcomes.',
@@ -34,13 +34,13 @@ const PHASES = [
   },
   {
     n: '03', slug: 'design', title: 'Design', line: 'Make the future workflow visible before building it.',
-    intro: 'We design the end-to-end experience: the decisions people make, the data they need, the actions the software takes, and what happens when the normal workflow breaks.',
+    intro: 'We design the complete experience: the decisions people make, the data they need, the actions the software takes, and what happens when the normal workflow breaks.',
     work: [
-      'Map future-state journeys for employees, managers, customers, and administrators.',
+      'Map journeys for the future workflow for employees, managers, customers, and administrators.',
       'Create interface flows, navigation, dashboards, forms, approval screens, and report structures.',
       'Specify the underlying data model, system connections, business rules, permissions, and audit requirements.',
       'Design exception handling: missing data, failed integrations, conflicting records, or approvals requiring a person.',
-      'Identify where rules-based automation is sufficient and where AI-assisted analysis or recommendations offer material value.',
+      'Identify where automation based on defined rules is sufficient and where analysis assisted by AI or recommendations offer material value.',
       'Walk through representative use cases with stakeholders before finalizing implementation.',
     ],
     example: 'For example: an operations manager sees an exception queue instead of checking multiple spreadsheets; the system assembles relevant information and routes only unresolved cases for review.',
@@ -53,11 +53,11 @@ const PHASES = [
       'Implement the application, user interfaces, integrations, and authorized data access.',
       'Normalize and reconcile information from connected sources so different systems can work together.',
       'Configure workflow rules, triggers, notifications, approvals, and user access controls.',
-      'Develop AI-assisted recommendations or predictive features only where appropriate to the defined outcome.',
-      'Test complete journeys—not just isolated screens—including errors, exceptions, permissions, and data changes.',
+      'Develop recommendations assisted by AI or predictive features only where appropriate to the defined outcome.',
+      'Test complete journeys, including errors, exceptions, permissions, and data changes, rather than testing isolated screens alone.',
       'Demonstrate working software at defined checkpoints and resolve issues before release.',
     ],
-    example: 'For example: a new order automatically updates the relevant records, notifies the next team, creates a management-visible status, and flags missing information before the work moves forward.',
+    example: 'For example: a new order automatically updates the relevant records, notifies the next team, creates a status that managers can view, and flags missing information before the work moves forward.',
     output: 'Working software, connected workflows, tested capabilities, and technical documentation for the agreed solution.',
   },
   {
@@ -65,18 +65,18 @@ const PHASES = [
     intro: 'A working application is not the same as an adopted operating system. Implementation makes the solution usable, dependable, and understood by the people relying on it.',
     work: [
       'Prepare the production environment, account permissions, and approved data migration or configuration.',
-      'Test real end-to-end scenarios with the employees who will operate the system.',
+      'Test real complete workflows with the employees who will operate the system.',
       'Define responsibilities for routine use, exception handling, technical support, and escalation.',
       'Create practical documentation and user guidance; train teams on their new workflows.',
       'Coordinate launch and closely review early data quality, workflow completion, errors, and adoption.',
-      'Complete the agreed handover or transition into post-launch support, depending on the service selected.',
+      'Complete the agreed handover or transition into support after launch, depending on the service selected.',
     ],
     example: 'For example: staff rehearse what happens when a customer updates an order after approval, including who receives the change, what is updated, and how the exception is resolved.',
     output: 'A deployed and configured solution, operational guidance, training materials, launch checks, and a clear support or handover plan.',
   },
   {
     n: '06', slug: 'improve', title: 'Improve', line: 'Measure performance and evolve deliberately.',
-    intro: 'After launch, we compare what the system is doing with the business outcomes agreed at the start. Improvements are selected because they solve a new problem or produce a measurable gain—not because a feature sounds impressive.',
+    intro: 'After launch, we compare what the system is doing with the business outcomes agreed at the start. Improvements are selected because they solve a new problem or produce a measurable gain, rather than simply adding features that sound impressive.',
     work: [
       'Review workflow completion time, manual intervention, exception rates, reliability, and adoption.',
       'Compare results against the original baseline where credible data is available.',
@@ -94,17 +94,17 @@ const SERVICES = [
   {
     name: 'Build', intro: 'Design, develop, and hand over.',
     detail: 'For businesses ready to deploy, operate, and maintain their solution with their own team or provider.',
-    terms: 'Project-based engagement. Includes diagnosis, architecture, development, testing, documentation, and handover.',
+    terms: 'Engagement scoped to a defined project. Includes diagnosis, architecture, development, testing, documentation, and handover.',
   },
   {
     name: 'Set', intro: 'Build, launch, and maintain.',
     detail: 'For businesses that want us to lead implementation and provide technical continuity after launch.',
-    terms: 'Includes Build plus production launch, 60 days of hands-on post-launch support, monthly implementation sessions for six months, and a minimum 18-month engineering maintenance agreement beginning at production launch.',
+    terms: 'Includes Build plus production launch, 60 days of practical support after launch, monthly implementation sessions for six months, and an engineering maintenance agreement lasting at least 18 months beginning at production launch.',
   },
   {
     name: 'Grow', intro: 'Build, embed, and keep improving.',
     detail: 'For businesses whose systems need to evolve alongside their operations.',
-    terms: 'Includes Build and Set, plus agreed quarterly feature enhancements, employee adoption support, and maintenance in a minimum 36-month partnership beginning at production launch.',
+    terms: 'Includes Build and Set, plus agreed quarterly feature enhancements, employee adoption support, and maintenance in a partnership lasting at least 36 months beginning at production launch.',
   },
 ] as const
 
