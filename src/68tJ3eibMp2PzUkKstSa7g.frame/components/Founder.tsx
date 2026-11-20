@@ -88,7 +88,7 @@ const PROOF = [
     area: 'Product commercialization',
     company: 'Searchmetrics',
     figure: '~$2M ARR',
-    body: 'Helped develop and launch Content Experience as a connected software offering, generating approximately $2M in ARR and a $7M pipeline.',
+    body: 'Helped develop and launch a content planning and optimization product integrated with an existing SEO platform, generating approximately $2M in ARR and a $7M pipeline.',
   },
   {
     area: 'Product simplification',
