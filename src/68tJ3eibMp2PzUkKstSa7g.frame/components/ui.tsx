@@ -80,8 +80,8 @@ export function Wordmark({ className = '' }: { className?: string }) {
 
 export const NAV = [
   { label: 'What We Do', href: '#what-we-do' },
-  { label: 'Our Services', href: '#services' },
   { label: 'How It Works', href: '#how-it-works' },
+  { label: 'Our Services', href: '#services' },
   { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ]

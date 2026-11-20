@@ -53,8 +53,8 @@ export default function Home(props: Props) {
           <Hero />
           <Problem />
           <WhatWeDo />
-          <Services onChoose={chooseService} />
           <HowItWorks />
+          <Services onChoose={chooseService} />
           <WhyUs />
           <Founder />
           <FAQ />
