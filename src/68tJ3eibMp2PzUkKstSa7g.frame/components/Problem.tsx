@@ -67,7 +67,7 @@ const PROBLEMS = [
   },
   {
     title: 'Growing complexity',
-    body: 'Every new customer, location, or employee adds more coordination and administrative work. Your business is growing, but your operating capacity isn't keeping pace.',
+    body: "Every new customer, location, or employee adds more coordination and administrative work. Your business is growing, but your operating capacity isn't keeping pace.",
     Icon: Network,
   },
 ]
