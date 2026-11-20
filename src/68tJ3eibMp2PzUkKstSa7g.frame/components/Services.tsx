@@ -89,7 +89,7 @@ function SetCard({ onChoose }: { onChoose: (s: ServiceInterest) => void }) {
       <Terms
         tone="light"
         rows={[
-          { k: 'Contract', v: 'Minimum 18-month engineering maintenance agreement beginning at production launch.' },
+          { k: 'Contract', v: 'Initial 6-month maintenance commitment beginning at production launch. Continues month to month afterward, with 60 days' notice to end.' },
           {
             k: 'After implementation',
             v: 'The ongoing relationship focuses on engineering maintenance unless additional services are agreed.',
@@ -170,11 +170,11 @@ function GrowCard({ onChoose }: { onChoose: (s: ServiceInterest) => void }) {
           rows={[
             {
               k: 'Contract',
-              v: 'Minimum 36-month system growth, adoption, and maintenance partnership beginning at production launch.',
+              v: 'Initial 12-month growth and maintenance commitment beginning at production launch. Continues month to month afterward, with 60 days' notice to end.',
             },
             {
-              k: 'After the contract',
-              v: 'Continue with adoption and maintenance, enter a new agreement for additional system development, or transition operational responsibility internally.',
+              k: 'After the initial term',
+              v: 'Continue with maintenance and agreed enhancements on a monthly basis. You may also discuss a maintenance-only plan or transition, with 60 days\' notice to end the current service.',
             },
           ]}
         />
