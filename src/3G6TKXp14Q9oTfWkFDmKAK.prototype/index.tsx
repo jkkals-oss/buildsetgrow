@@ -8,5 +8,5 @@ export const viewport = 'web'
 
 export default function Prototype() {
   const path = typeof window === 'undefined' ? '/' : window.location.pathname.replace(/\/$/, '') || '/'
-  return path === '/our-process' ? <ProcessPage /> : <Home />
+  return path === '/how-we-work' ? <ProcessPage /> : <Home />
 }
