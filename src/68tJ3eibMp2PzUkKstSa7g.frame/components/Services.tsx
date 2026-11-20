@@ -89,7 +89,7 @@ function SetCard({ onChoose }: { onChoose: (s: ServiceInterest) => void }) {
       <Terms
         tone="light"
         rows={[
-          { k: 'Contract', v: 'Initial 6-month maintenance commitment beginning at production launch. Continues month to month afterward, with 60 days' notice to end.' },
+          { k: 'Contract', v: 'Initial 6-month maintenance commitment beginning at production launch. Continues month to month afterward, with 60 days notice to end.' },
           {
             k: 'After implementation',
             v: 'The ongoing relationship focuses on engineering maintenance unless additional services are agreed.',
@@ -170,7 +170,7 @@ function GrowCard({ onChoose }: { onChoose: (s: ServiceInterest) => void }) {
           rows={[
             {
               k: 'Contract',
-              v: 'Initial 12-month growth and maintenance commitment beginning at production launch. Continues month to month afterward, with 60 days' notice to end.',
+              v: 'Initial 12-month growth and maintenance commitment beginning at production launch. Continues month to month afterward, with 60 days notice to end.',
             },
             {
               k: 'After the initial term',
