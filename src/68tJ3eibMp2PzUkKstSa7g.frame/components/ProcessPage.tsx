@@ -99,12 +99,12 @@ const SERVICES = [
   {
     name: 'Set', intro: 'Build, launch, and maintain.',
     detail: 'For businesses that want us to lead implementation and provide technical continuity after launch.',
-    terms: 'Includes Build plus production launch, 60 days of practical support after launch, monthly implementation sessions for six months, and an engineering maintenance agreement lasting at least 18 months beginning at production launch.',
+    terms: 'Includes Build plus production launch, 60 days of practical support after launch, monthly implementation sessions for six months, and an initial 6-month maintenance agreement beginning at production launch. Service then continues month to month, with 60 days' notice to end.',
   },
   {
     name: 'Grow', intro: 'Build, embed, and keep improving.',
     detail: 'For businesses whose systems need to evolve alongside their operations.',
-    terms: 'Includes Build and Set, plus agreed quarterly feature enhancements, employee adoption support, and maintenance in a partnership lasting at least 36 months beginning at production launch.',
+    terms: 'Includes Build and Set, plus agreed quarterly feature enhancements, employee adoption support, and maintenance in an initial 12-month partnership beginning at production launch. Service then continues month to month, with 60 days' notice to end.',
   },
 ] as const
 
