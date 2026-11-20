@@ -28,7 +28,7 @@ export function Footer() {
 
           <nav aria-label="Footer" className="md:col-span-4 md:col-start-7">
             <ul className="grid grid-cols-2 gap-x-8 gap-y-3 text-[14px]">
-              {NAV.map((n) => (
+              {[...NAV, { label: 'How We Work', href: '/how-we-work' }].map((n) => (
                 <li key={n.href}>
                   <a href={homeHref(n.href)} className="whitespace-nowrap text-stone transition-colors duration-150 hover:text-terracotta">
                     {n.label}
