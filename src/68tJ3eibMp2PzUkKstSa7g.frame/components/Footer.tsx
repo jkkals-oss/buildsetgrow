@@ -10,8 +10,8 @@ const LEGAL = [
 ]
 
 export function Footer() {
-  const isProcessPage = typeof window !== 'undefined' && window.location.pathname.startsWith('/our-process')
-  const homeHref = (href: string) => isProcessPage ? `/${href}` : href
+  const isProcessPage = typeof window !== 'undefined' && window.location.pathname.startsWith('/how-we-work')
+  const homeHref = (href: string) => isProcessPage && href.startsWith('#') ? `/${href}` : href
   return (
     <footer className="relative overflow-hidden border-t border-ivory/10 bg-ink">
       <LeafCluster preset="footer" />
