@@ -1,52 +1,54 @@
 import React from 'react'
 
-import { Eyebrow, Headline } from './ui'
+import { Eyebrow } from './ui'
 import { Reveal } from './motion'
 
-export function WhoWeHelp() {
+/**
+ * Audience examples live inside the combined growth-challenges section.
+ * Keep the diagrams and descriptions in one reusable place.
+ */
+export function AudienceProfiles() {
   return (
-    <section aria-labelledby="who-title" className="relative bg-ivory text-graphite">
-      <div className="mx-auto max-w-[1240px] px-5 py-24 sm:px-8 lg:py-32">
-        <Reveal className="max-w-3xl">
-          <Eyebrow tone="light">Built for businesses in motion</Eyebrow>
-          <Headline tone="light" className="mt-6 text-[38px] sm:text-[48px] lg:text-[54px]">
-            <span id="who-title">For businesses growing faster than their operations can keep up.</span>
-          </Headline>
-          <p className="mt-7 max-w-2xl text-[16px] leading-relaxed text-graphite-2">
-            We work with ambitious, established businesses that have invested in technology but lack the internal product
-            and engineering capacity to make their systems work together.
-          </p>
-        </Reveal>
+    <div className="mt-16 border-t border-graphite/15 pt-12 lg:mt-20 lg:pt-16">
+      <Reveal className="grid gap-5 lg:grid-cols-12 lg:items-end">
+        <div className="lg:col-span-6">
+          <Eyebrow tone="light">Who we help</Eyebrow>
+          <h3 className="mt-5 font-display text-[30px] font-light leading-tight text-graphite sm:text-[38px]">
+            Built for businesses in motion.
+          </h3>
+        </div>
+        <p className="max-w-lg text-[15px] leading-relaxed text-graphite-2 lg:col-span-5 lg:col-start-8">
+          Growth looks different across industries. The common challenge is making existing systems,
+          data, and everyday work operate together as the business becomes more complex.
+        </p>
+      </Reveal>
 
-        <ul className="mt-16 grid gap-5 sm:grid-cols-2 lg:mt-20">
-          {AUDIENCES.map((a, i) => (
-            <Reveal
-              as="li"
-              key={a.title}
-              delay={(i % 2) * 0.05}
-              className="grid h-full grid-cols-1 gap-6 rounded-3xl border border-graphite/10 bg-paper/50 p-6 sm:p-7 md:grid-cols-[1fr_150px] md:items-center"
-            >
-              <div className="order-2 md:order-1">
-                <h3 className="font-display text-[26px] leading-tight text-graphite">{a.title}</h3>
-                <p className="mt-3 text-[14.5px] leading-relaxed text-graphite-2">{a.body}</p>
-              </div>
-              <div className="order-1 flex h-[110px] items-center md:order-2 md:h-[130px] md:justify-center">
-                <a.Diagram />
-              </div>
-            </Reveal>
-          ))}
-        </ul>
+      <ul className="mt-9 grid gap-4 sm:grid-cols-2">
+        {AUDIENCES.map((a, i) => (
+          <Reveal
+            as="li"
+            key={a.title}
+            delay={(i % 2) * 0.05}
+            className="flex h-full items-center justify-between gap-4 rounded-2xl border border-graphite/10 bg-paper/60 p-5 sm:p-6"
+          >
+            <div className="min-w-0">
+              <h4 className="font-display text-[23px] leading-tight text-graphite">{a.title}</h4>
+              <p className="mt-2 text-[14px] leading-relaxed text-graphite-2">{a.body}</p>
+            </div>
+            <div className="hidden h-[78px] w-[96px] shrink-0 md:block">
+              <a.Diagram />
+            </div>
+          </Reveal>
+        ))}
+      </ul>
 
-        <Reveal className="mt-16 flex flex-col gap-2 border-t border-graphite/15 pt-10 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
-          <p className="font-display text-[26px] font-light leading-tight text-graphite-2 sm:text-[30px]">
-            Different businesses. Different systems.
-          </p>
-          <p className="font-display text-[26px] leading-tight text-graphite sm:text-[30px]">
-            One approach: <span className="italic text-clay">build around what you already have.</span>
-          </p>
-        </Reveal>
-      </div>
-    </section>
+      <Reveal className="mt-10 border-t border-graphite/15 pt-8">
+        <p className="font-display text-[24px] font-light leading-tight text-graphite sm:text-[30px]">
+          Different businesses. Different systems.
+          <span className="block italic text-clay sm:inline"> One approach: build around what you already have.</span>
+        </p>
+      </Reveal>
+    </div>
   )
 }
 

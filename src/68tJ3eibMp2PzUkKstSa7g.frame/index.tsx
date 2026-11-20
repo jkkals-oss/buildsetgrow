@@ -6,7 +6,6 @@ import { Problem } from './components/Problem'
 import { WhatWeDo } from './components/WhatWeDo'
 import { Services } from './components/Services'
 import { HowItWorks } from './components/HowItWorks'
-import { WhoWeHelp } from './components/WhoWeHelp'
 import { WhyUs } from './components/WhyUs'
 import { Founder } from './components/Founder'
 import { FAQ } from './components/FAQ'
@@ -56,7 +55,6 @@ export default function Home(props: Props) {
           <WhatWeDo />
           <Services onChoose={chooseService} />
           <HowItWorks />
-          <WhoWeHelp />
           <WhyUs />
           <Founder />
           <FAQ />

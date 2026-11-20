@@ -4,6 +4,7 @@ import { Unplug, FolderOpen, Repeat2, Network } from 'lucide-react'
 import { Eyebrow, Headline } from './ui'
 import { Reveal } from './motion'
 import { LeafCluster } from './leaves/LeafCluster'
+import { AudienceProfiles } from './WhoWeHelp'
 
 export function Problem() {
   return (
@@ -42,11 +43,7 @@ export function Problem() {
           ))}
         </ul>
 
-        <Reveal className="mt-16 border-t border-graphite/15 pt-10 lg:mt-20">
-          <p className="max-w-3xl font-display text-[28px] font-light leading-tight text-graphite sm:text-[34px]">
-            You shouldn't have to hire an entire technology department to solve these problems.
-          </p>
-        </Reveal>
+        <AudienceProfiles />
       </div>
     </section>
   )
