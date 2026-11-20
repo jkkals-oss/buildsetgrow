@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { ArrowUpRight, Menu, X } from 'lucide-react'
 
 import { Button, NAV, Wordmark } from './ui'
 import { EASE_OUT } from './motion'
@@ -40,7 +40,7 @@ export function Header() {
         <nav aria-label="Primary" className="hidden lg:block">
           <ul className="flex items-center gap-1">
             {NAV.map((item) => {
-              const isActive = item.href === '/how-we-work' ? isProcessPage : item.href.startsWith('#') && active === item.href.slice(1)
+              const isActive = item.href.startsWith('#') && active === item.href.slice(1)
               return (
                 <li key={item.href}>
                   <a
@@ -66,6 +66,15 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <a
+            href="/how-we-work"
+            aria-current={isProcessPage ? 'page' : undefined}
+            className={`hidden items-center gap-1.5 whitespace-nowrap rounded-full border px-4 py-2.5 text-[13px] font-medium transition-colors duration-150 hover:border-ember hover:text-terracotta focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember lg:inline-flex ${
+              isProcessPage ? 'border-ember text-ivory' : 'border-ivory/25 text-ivory'
+            }`}
+          >
+            How We Work <ArrowUpRight size={14} aria-hidden />
+          </a>
           <Button href={homeHref("#contact")} className="hidden !px-5 !py-2.5 sm:inline-flex">
             Let's Talk
           </Button>
@@ -108,6 +117,16 @@ export function Header() {
                 </li>
               ))}
               <li className="pt-5">
+                <a
+                  href="/how-we-work"
+                  onClick={() => setOpen(false)}
+                  aria-current={isProcessPage ? 'page' : undefined}
+                  className="flex w-full items-center justify-center gap-2 rounded-full border border-ivory/25 px-5 py-3.5 text-sm font-semibold text-ivory transition-colors hover:border-ember hover:text-terracotta"
+                >
+                  How We Work <ArrowUpRight size={15} aria-hidden />
+                </a>
+              </li>
+              <li className="pt-3">
                 <Button href={homeHref("#contact")} onClick={() => setOpen(false)} className="w-full">
                   Let's Talk
                 </Button>
