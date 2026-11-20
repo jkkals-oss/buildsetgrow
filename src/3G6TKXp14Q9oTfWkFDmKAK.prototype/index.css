@@ -1,0 +1,120 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORT — DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Inter:wght@400;500;600&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORT MUST NEVER BE DELETED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss';
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+@theme {
+  --color-ink: #101820;
+  --color-ink-2: #19232b;
+  --color-ink-3: #212c35;
+  --color-ember: #c66a3d;
+  --color-clay: #a95332;
+  --color-terracotta: #da8050;
+  --color-ivory: #f4f0e9;
+  --color-paper: #ebe5da;
+  --color-stone: #b7b1a9;
+  --color-graphite: #242b2d;
+  --color-graphite-2: #5a5853;
+  --color-bark: #8a6a52;
+
+  --font-display: 'Newsreader', 'Iowan Old Style', Georgia, serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --ease-out-soft: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-ivory);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ---------- Falling leaves ---------- */
+/* The wrapper spans the hero, so translating it by its own height carries the leaf from top to bottom. */
+@keyframes leaf-fall {
+  0% {
+    transform: translate3d(0, -12%, 0);
+    opacity: 0;
+  }
+  8% {
+    opacity: var(--leaf-opacity, 0.7);
+  }
+  85% {
+    opacity: var(--leaf-opacity, 0.7);
+  }
+  100% {
+    transform: translate3d(var(--leaf-drift, 40px), calc(100% - var(--leaf-land, 40px)), 0);
+    opacity: var(--leaf-end-opacity, 0);
+  }
+}
+
+@keyframes leaf-sway {
+  0% {
+    transform: translate3d(calc(var(--leaf-sway, 24px) * -1), 0, 0) rotate(calc(var(--leaf-rot, 30deg) * -1));
+  }
+  100% {
+    transform: translate3d(var(--leaf-sway, 24px), 0, 0) rotate(var(--leaf-rot, 30deg));
+  }
+}
+
+@keyframes leaf-settle {
+  0% {
+    transform: translate3d(0, -10px, 0) rotate(calc(var(--leaf-angle) - 14deg));
+    opacity: 0.2;
+  }
+  60% {
+    transform: translate3d(0, 1px, 0) rotate(calc(var(--leaf-angle) + 3deg));
+    opacity: var(--leaf-opacity, 0.8);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(var(--leaf-angle));
+    opacity: var(--leaf-opacity, 0.8);
+  }
+}
+
+@keyframes leaf-drift-soft {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(var(--leaf-angle, 0deg));
+  }
+  50% {
+    transform: translate3d(6px, 10px, 0) rotate(calc(var(--leaf-angle, 0deg) + 8deg));
+  }
+}
+
+.leaf-fall {
+  animation: leaf-fall var(--leaf-dur, 12s) linear var(--leaf-delay, 0s) 1 both;
+}
+.leaf-sway {
+  animation: leaf-sway var(--leaf-sway-dur, 3.4s) ease-in-out infinite alternate;
+}
+.leaf-settle {
+  animation: leaf-settle 1.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+.leaf-drift-soft {
+  animation: leaf-drift-soft 14s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .leaf-fall,
+  .leaf-sway,
+  .leaf-settle,
+  .leaf-drift-soft {
+    animation: none !important;
+  }
+}
