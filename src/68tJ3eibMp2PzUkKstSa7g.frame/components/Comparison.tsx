@@ -84,5 +84,5 @@ const ROWS: { label: string; cells: (boolean | string)[] }[] = [
   { label: 'Engineering maintenance and technical support', cells: [false, true, true] },
   { label: 'Quarterly roadmap of new capabilities', cells: [false, false, true] },
   { label: 'Employee adoption and enablement', cells: [false, false, true] },
-  { label: 'Minimum term', cells: ['Project-based', '18 months from launch', '36 months from launch'] },
+  { label: 'Minimum term', cells: ['Project-based', '6 months from launch', '12 months from launch'] },
 ]
