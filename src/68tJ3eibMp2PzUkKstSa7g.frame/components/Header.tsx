@@ -9,6 +9,8 @@ export function Header() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const active = useActiveSection()
+  const isProcessPage = typeof window !== 'undefined' && window.location.pathname.startsWith('/our-process')
+  const homeHref = (href: string) => isProcessPage ? `/${href}` : href
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -31,7 +33,7 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-[72px] max-w-[1240px] items-center justify-between gap-6 px-5 sm:px-8">
-        <a href="#top" aria-label="BuildSetGrow, back to top" className="shrink-0 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember">
+        <a href={isProcessPage ? "/" : "#top"} aria-label="BuildSetGrow, back to top" className="shrink-0 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember">
           <Wordmark />
         </a>
 
@@ -42,7 +44,7 @@ export function Header() {
               return (
                 <li key={item.href}>
                   <a
-                    href={item.href}
+                    href={homeHref(item.href)}
                     aria-current={isActive ? 'true' : undefined}
                     className={`relative whitespace-nowrap rounded-full px-3.5 py-2 text-[13.5px] transition-colors duration-150 ease-out hover:text-terracotta ${
                       isActive ? 'text-ivory' : 'text-stone'
@@ -64,7 +66,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button href="#contact" className="hidden !px-5 !py-2.5 sm:inline-flex">
+          <Button href={homeHref("#contact")} className="hidden !px-5 !py-2.5 sm:inline-flex">
             Let's Talk
           </Button>
           <button
