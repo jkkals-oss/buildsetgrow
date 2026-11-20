@@ -34,7 +34,7 @@ export function Hero() {
           </p>
           <p className="mt-5 max-w-xl text-[15.5px] leading-relaxed text-stone">
             BuildSetGrow connects your existing technology, organizes fragmented data, and builds custom software around
-            the way your business operates—without requiring an in-house product or engineering team.
+            the way your business operates. You don't need an internal product or engineering team.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button href="#contact">
