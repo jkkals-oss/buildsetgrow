@@ -108,7 +108,7 @@ const FAQS = [
   },
   {
     q: 'What happens after our service contract ends?',
-    a: 'Set begins with a 6-month commitment and Grow with a 12-month commitment from production launch. Both continue month to month after their initial term, with 60 days notice to end. We can also discuss a change in service level or an operational handover.',
+    a: 'Set begins with a 6-month commitment and Grow with a 12-month commitment from production launch. Both continue month to month after their initial term, with 60 days advance notice to end. We can also discuss a change in service level or an operational handover.',
   },
   {
     q: 'How much does a project cost?',
