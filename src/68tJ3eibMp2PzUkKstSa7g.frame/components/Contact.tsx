@@ -10,7 +10,7 @@ import { submitContact, type ContactPayload } from './submitContact'
 
 type Fields = Omit<ContactPayload, 'service'>
 type Errors = Partial<Record<keyof Fields, string>>
-type Status = { kind: 'idle' } | { kind: 'sending' } | { kind: 'done'; delivered: boolean; name: string } | { kind: 'failed'; message: string }
+type Status = { kind: 'idle' } | { kind: 'sending' } | { kind: 'done'; name: string } | { kind: 'preview' } | { kind: 'failed'; message: string }
 
 export function Contact({
   service,
@@ -36,7 +36,7 @@ export function Contact({
       setErrors(validate(EMPTY))
       setStatus({ kind: 'idle' })
     } else if (previewState === 'submitted') {
-      setStatus({ kind: 'done', delivered: false, name: 'Amara' })
+      setStatus({ kind: 'preview' })
     } else {
       setValues(EMPTY)
       setAttempted(false)
@@ -64,7 +64,7 @@ export function Contact({
     setStatus({ kind: 'sending' })
     const res = await submitContact({ ...trimAll(values), service })
     if ('message' in res) setStatus({ kind: 'failed', message: res.message })
-    else setStatus({ kind: 'done', delivered: res.delivered, name: values.fullName.trim().split(' ')[0] })
+    else setStatus({ kind: 'done', name: values.fullName.trim().split(' ')[0] })
   }
 
   const errorCount = Object.keys(errors).length
@@ -102,7 +102,7 @@ export function Contact({
         <div className="relative z-10 lg:col-span-7">
           <div className="rounded-3xl border border-ivory/10 bg-ink-2 p-6 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.8)] sm:p-9">
             <AnimatePresence mode="wait" initial={false}>
-              {status.kind === 'done' ? (
+              {status.kind === 'done' || status.kind === 'preview' ? (
                 <motion.div
                   key="done"
                   initial={{ opacity: 0, y: 8 }}
@@ -115,20 +115,15 @@ export function Contact({
                   <span className="grid h-11 w-11 place-items-center rounded-full bg-ember text-ink">
                     <Check size={20} aria-hidden />
                   </span>
-                  <h3 className="mt-6 font-display text-[32px] leading-tight text-ivory">Thank you, {status.name}.</h3>
-                  {status.delivered ? (
+                  <h3 className="mt-6 font-display text-[32px] leading-tight text-ivory">{status.kind === 'preview' ? 'Form preview' : `Thank you, ${status.name}.`}</h3>
+                  {status.kind === 'done' ? (
                     <p className="mt-3 max-w-md text-[15px] leading-relaxed text-stone">
-                      Your message has been sent. We'll read it carefully and reply to the work email you provided.
+                      Your inquiry has been received by our form service. We'll reply to the work email you provided.
                     </p>
                   ) : (
-                    <>
-                      <p className="mt-3 max-w-md text-[15px] leading-relaxed text-stone">
-                        Your details are complete and ready to send.
-                      </p>
-                      <p className="mt-5 max-w-md rounded-xl border border-ivory/10 px-4 py-3 text-[13px] leading-relaxed text-stone">
-                        Preview mode: no message was delivered. Form submissions activate when the site is deployed to Netlify.
-                      </p>
-                    </>
+                    <p className="mt-3 max-w-md text-[15px] leading-relaxed text-stone">
+                      Design preview only. No inquiry has been sent.
+                    </p>
                   )}
                   <button
                     type="button"
@@ -148,7 +143,6 @@ export function Contact({
                   key="form"
                   ref={formRef}
                   name="contact"
-                  data-netlify="true"
                   noValidate
                   onSubmit={onSubmit}
                   initial={{ opacity: 0 }}
@@ -237,7 +231,7 @@ export function Contact({
                         </>
                       )}
                     </button>
-                    <p className="text-[12.5px] text-stone">We'll only use your details to reply to you.</p>
+                    <p className="text-[12.5px] text-stone">We'll only use your details to respond to your inquiry. <a href="/privacy" className="underline underline-offset-4 hover:text-terracotta">Privacy Policy</a></p>
                   </div>
                 </motion.form>
               )}
