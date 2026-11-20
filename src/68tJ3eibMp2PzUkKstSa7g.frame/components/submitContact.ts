@@ -1,8 +1,12 @@
 /**
- * Netlify Forms integration for the BuildSetGrow contact form.
- * A matching hidden static form in index.html lets Netlify detect the fields at build time.
- * Submissions are sent only on Netlify or the configured custom domain; previews remain unsent.
- * Configure Netlify Forms submission notifications to jkkals@gmail.com in the Netlify dashboard.
+ * Contact-form delivery via Formspree (hosting independent).
+ *
+ * Configure VITE_FORMSPREE_FORM_ID in Bolt's project environment.
+ * Formspree must be configured separately to notify the desired inbox.
+ * Never report delivery unless the endpoint accepts the POST.
+ *
+ * Form IDs are public identifiers, not secret API keys. Never place an
+ * email-provider secret or private API token in a VITE_ variable.
  */
 export type ContactPayload = {
   fullName: string
@@ -14,27 +18,46 @@ export type ContactPayload = {
   service: string
 }
 
-export type SubmitResult = { ok: true; delivered: boolean } | { ok: false; message: string }
+export type SubmitResult = { ok: true } | { ok: false; message: string }
 
-function isLiveSite(): boolean {
-  if (typeof window === 'undefined') return false
-  const host = window.location.hostname.toLowerCase()
-  return host === 'buildsetgrow.com' || host === 'www.buildsetgrow.com' || host.endsWith('.netlify.app')
-}
+const formId = (import.meta.env.VITE_FORMSPREE_FORM_ID || '').trim()
 
 export async function submitContact(payload: ContactPayload): Promise<SubmitResult> {
-  if (!isLiveSite()) return { ok: true, delivered: false }
+  if (!/^[a-zA-Z0-9]+$/.test(formId)) {
+    return {
+      ok: false,
+      message: 'The contact form is not yet configured. Please email jkkals@gmail.com directly.',
+    }
+  }
 
   try {
-    const body = new URLSearchParams({ 'form-name': 'contact', ...payload })
-    const res = await fetch('/', {
+    const response = await fetch(`https://formspree.io/f/${formId}`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: body.toString(),
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        ...payload,
+        _subject: 'New BuildSetGrow website inquiry',
+        _replyto: payload.email,
+      }),
     })
-    if (!res.ok) return { ok: false, message: 'We couldn’t send your message just now. Please try again in a moment.' }
-    return { ok: true, delivered: true }
+
+    if (!response.ok) {
+      return {
+        ok: false,
+        message: response.status === 429
+          ? 'Too many requests were received. Please try again shortly or email us directly.'
+          : 'Your message could not be sent. Please try again, or email jkkals@gmail.com directly.',
+      }
+    }
+
+    return { ok: true }
   } catch {
-    return { ok: false, message: 'We couldn’t reach the server. Check your connection and try again.' }
+    return {
+      ok: false,
+      message: 'We could not connect to the form service. Please try again, or email jkkals@gmail.com directly.',
+    }
   }
 }
