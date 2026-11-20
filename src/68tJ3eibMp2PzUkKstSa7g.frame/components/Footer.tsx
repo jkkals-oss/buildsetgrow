@@ -3,22 +3,21 @@ import React from 'react'
 import { NAV, Wordmark } from './ui'
 import { LeafCluster } from './leaves/LeafCluster'
 
-/** Policy pages are not written yet. Point these at /privacy and /terms once they exist. */
+/** Terms page is not published yet. */
 const LEGAL = [
   { label: 'Privacy Policy', href: '/privacy' },
-  { label: 'Terms', href: '/terms' },
 ]
 
 export function Footer() {
-  const isProcessPage = typeof window !== 'undefined' && window.location.pathname.startsWith('/how-we-work')
-  const homeHref = (href: string) => isProcessPage && href.startsWith('#') ? `/${href}` : href
+  const isInnerPage = typeof window !== 'undefined' && (window.location.pathname.startsWith('/how-we-work') || window.location.pathname.startsWith('/privacy'))
+  const homeHref = (href: string) => isInnerPage && href.startsWith('#') ? `/${href}` : href
   return (
     <footer className="relative overflow-hidden border-t border-ivory/10 bg-ink">
       <LeafCluster preset="footer" />
       <div className="relative mx-auto max-w-[1240px] px-5 pb-36 pt-16 sm:px-8 lg:pb-40 lg:pt-20">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
-            <a href={isProcessPage ? "/" : "#top"} aria-label="BuildSetGrow, back to top" className="inline-block">
+            <a href={isInnerPage ? "/" : "#top"} aria-label="BuildSetGrow, back to top" className="inline-block">
               <Wordmark className="text-[28px]" />
             </a>
             <p className="mt-4 max-w-xs font-display text-[19px] italic leading-snug text-stone">
