@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import { ArrowUpRight } from 'lucide-react'
 import { motion, useMotionValueEvent, useReducedMotion, useScroll, useSpring } from 'framer-motion'
 
 import { Eyebrow, Headline } from './ui'
@@ -65,6 +66,8 @@ export function HowItWorks() {
               )
             })}
           </ol>
+
+          <a href="/our-process" className="group mt-12 inline-flex items-center gap-2 rounded-full border border-ember/60 px-6 py-3 text-[14px] font-medium text-ivory transition-colors hover:bg-ember hover:text-ink">Explore our full process <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></a>
 
           <Reveal className="mt-16 border-t border-ivory/10 pt-10">
             <p className="font-display text-[24px] font-light leading-snug text-stone sm:text-[28px]">
