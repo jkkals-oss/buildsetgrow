@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { ArrowUpRight, Boxes, Building2, ClipboardList, Layers, ShieldAlert, Sparkles } from 'lucide-react'
+import React from 'react'
+import { ArrowUpRight, Boxes, Building2, Layers, ShieldAlert, Sparkles } from 'lucide-react'
 import { Eyebrow, Headline } from './ui'
 import { Reveal } from './motion'
 
@@ -63,7 +63,6 @@ function PocketsPreview() {
 }
 
 export function PrototypeShowcase() {
-  const [expanded, setExpanded] = useState(false)
   return (
     <section aria-labelledby="prototype-title" className="border-t border-ivory/10 bg-ink">
       <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-8 lg:py-24">
