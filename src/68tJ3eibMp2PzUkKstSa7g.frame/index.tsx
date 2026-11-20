@@ -5,6 +5,7 @@ import { Hero } from './components/Hero'
 import { Problem } from './components/Problem'
 import { WhatWeDo } from './components/WhatWeDo'
 import { Services } from './components/Services'
+import { PrototypeShowcase } from './components/PrototypeShowcase'
 import { WhyUs } from './components/WhyUs'
 import { Founder } from './components/Founder'
 import { FAQ } from './components/FAQ'
@@ -52,6 +53,7 @@ export default function Home(props: Props) {
           <Hero />
           <Problem />
           <WhatWeDo />
+          <PrototypeShowcase />
           <Services onChoose={chooseService} />
           <WhyUs />
           <Founder />
