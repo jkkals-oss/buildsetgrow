@@ -24,17 +24,17 @@ export function Hero() {
           <Eyebrow>Custom software for growing businesses</Eyebrow>
           <Headline as="h1" className="mt-7 text-[44px] sm:text-[60px] lg:text-[68px]">
             <span id="hero-title">
-              Your business is growing.
+              Slow down.
               <br />
-              <span className="italic text-stone">Your systems should keep up.</span>
+              <span className="italic text-ember">To speed up.</span>
             </span>
           </Headline>
           <p className="mt-8 max-w-xl font-display text-[22px] leading-snug text-ivory sm:text-2xl">
             Your business already has the tools. <span className="text-ember">We make them work together.</span>
           </p>
           <p className="mt-5 max-w-xl text-[15.5px] leading-relaxed text-stone">
-            BuildSetGrow connects your existing technology, organizes fragmented data, and builds custom software around
-            the way your business operates. You don't need an internal product or engineering team.
+            We start by understanding how your business actually works. Then we connect the technology you already use,
+            simplify fragmented workflows, and build what's missing. No internal product or engineering team required.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button href="#contact">
