@@ -9,8 +9,9 @@ export function Header() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const active = useActiveSection()
+  const isInnerPage = typeof window !== 'undefined' && (window.location.pathname.startsWith('/how-we-work') || window.location.pathname.startsWith('/privacy'))
   const isProcessPage = typeof window !== 'undefined' && window.location.pathname.startsWith('/how-we-work')
-  const homeHref = (href: string) => isProcessPage && href.startsWith('#') ? `/${href}` : href
+  const homeHref = (href: string) => isInnerPage && href.startsWith('#') ? `/${href}` : href
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -33,7 +34,7 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-[72px] max-w-[1240px] items-center justify-between gap-6 px-5 sm:px-8">
-        <a href={isProcessPage ? "/" : "#top"} aria-label="BuildSetGrow, back to top" className="shrink-0 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember">
+        <a href={isInnerPage ? "/" : "#top"} aria-label="BuildSetGrow, back to top" className="shrink-0 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember">
           <Wordmark />
         </a>
 
