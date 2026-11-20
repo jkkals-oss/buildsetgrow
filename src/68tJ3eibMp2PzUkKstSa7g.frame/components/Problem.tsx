@@ -52,22 +52,22 @@ export function Problem() {
 const PROBLEMS = [
   {
     title: 'Disconnected systems',
-    body: "Your applications hold valuable information, but they don't work together the way your business needs them to.",
+    body: "Your teams rely on different applications that don't work together. Information gets entered repeatedly, updates are missed, and work slows down between departments.",
     Icon: Unplug,
   },
   {
     title: 'Scattered information',
-    body: 'Critical business data is spread across spreadsheets, documents, emails, and multiple platforms.',
+    body: 'You have the data, but getting a reliable picture of your business requires pulling information from spreadsheets, emails, and multiple systems.',
     Icon: FolderOpen,
   },
   {
     title: 'Manual workflows',
-    body: 'Your team spends valuable time transferring information, reconciling records, and managing repetitive tasks.',
+    body: 'Your employees spend hours transferring information, chasing approvals, reconciling records, and completing repetitive work instead of serving customers.',
     Icon: Repeat2,
   },
   {
     title: 'Growing complexity',
-    body: 'New customers, contracts, employees, locations, and business entities add operational demands faster than your processes can adapt.',
+    body: 'Every new customer, location, or employee adds more coordination and administrative work. Your business is growing, but your operating capacity isn't keeping pace.',
     Icon: Network,
   },
 ]
