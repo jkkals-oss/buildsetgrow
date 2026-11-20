@@ -9,8 +9,8 @@ export function Header() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const active = useActiveSection()
-  const isProcessPage = typeof window !== 'undefined' && window.location.pathname.startsWith('/our-process')
-  const homeHref = (href: string) => isProcessPage ? `/${href}` : href
+  const isProcessPage = typeof window !== 'undefined' && window.location.pathname.startsWith('/how-we-work')
+  const homeHref = (href: string) => isProcessPage && href.startsWith('#') ? `/${href}` : href
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -40,7 +40,7 @@ export function Header() {
         <nav aria-label="Primary" className="hidden lg:block">
           <ul className="flex items-center gap-1">
             {NAV.map((item) => {
-              const isActive = active === item.href.slice(1)
+              const isActive = item.href === '/how-we-work' ? isProcessPage : item.href.startsWith('#') && active === item.href.slice(1)
               return (
                 <li key={item.href}>
                   <a
@@ -97,10 +97,10 @@ export function Header() {
               {NAV.map((item) => (
                 <li key={item.href}>
                   <a
-                    href={item.href}
+                    href={homeHref(item.href)}
                     onClick={() => setOpen(false)}
                     className={`flex items-center justify-between border-b border-ivory/[0.07] py-4 font-display text-2xl font-light transition-colors duration-150 hover:text-terracotta ${
-                      active === item.href.slice(1) ? 'text-ember' : 'text-ivory'
+                      (item.href === '/how-we-work' ? isProcessPage : item.href.startsWith('#') && active === item.href.slice(1)) ? 'text-ember' : 'text-ivory'
                     }`}
                   >
                     {item.label}
@@ -108,7 +108,7 @@ export function Header() {
                 </li>
               ))}
               <li className="pt-5">
-                <Button href="#contact" onClick={() => setOpen(false)} className="w-full">
+                <Button href={homeHref("#contact")} onClick={() => setOpen(false)} className="w-full">
                   Let's Talk
                 </Button>
               </li>
@@ -123,7 +123,7 @@ export function Header() {
 function useActiveSection() {
   const [active, setActive] = useState<string | null>(null)
   useEffect(() => {
-    const ids = NAV.map((n) => n.href.slice(1))
+    const ids = NAV.filter((n) => n.href.startsWith('#')).map((n) => n.href.slice(1))
     const els = ids.map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[]
     if (!els.length) return
     const io = new IntersectionObserver(
