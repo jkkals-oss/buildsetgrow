@@ -20,7 +20,7 @@ export function WhatWeDo() {
             </Headline>
             <div className="mt-8 max-w-xl space-y-4 text-[15.5px] leading-relaxed text-stone">
               <p>
-                We start by understanding your business—how information moves, how work gets done, and where your existing
+                We start by understanding your business, including how information moves, how work gets done, and where your existing
                 technology falls short. Then we design and build software tailored to those operational needs.
               </p>
               <p>
