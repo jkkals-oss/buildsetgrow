@@ -16,7 +16,7 @@ const PHASES = [
       'Identify recurring handoffs, approval bottlenecks, undocumented decisions, and work that depends on one person.',
       'Establish useful measures such as time spent, service capacity, customer response, campaign performance, and commercial impact.',
     ],
-    example: 'For example: we might trace an event campaign from planning and promotion through registration, attendance, sales follow up, and reporting, then discover that customer information is scattered across several teams and tools.',
+    example: 'For example: we might follow an order through sales, inventory, fulfillment, and invoicing, and find that several teams enter the same information while no one can see its complete status.',
     output: 'A map of the relevant business workflows, channels, and systems, with key friction points, data dependencies, and a prioritized problem statement.',
   },
   {
@@ -29,7 +29,7 @@ const PHASES = [
       'Define scope boundaries, ownership, dependencies, implementation risks, and delivery sequence.',
       'Prioritize improvements by their impact on customers, revenue opportunities, team capacity, and operating complexity.',
     ],
-    example: 'For example: a business promoting events across social channels and email may need a coordinated campaign workflow, shared brand assets, and a clear path from registration to customer follow up rather than another marketing tool.',
+    example: 'For example: a company opening new locations may not need to replace its scheduling software. It may need consistent operating procedures and one view of staffing, appointments, and customer demand.',
     output: 'An agreed solution scope, decision rationale, prioritized requirements, success measures, and delivery plan.',
   },
   {
@@ -43,7 +43,7 @@ const PHASES = [
       'Identify where automation based on defined rules is sufficient and where analysis assisted by AI or recommendations offer material value.',
       'Walk through representative use cases with stakeholders before finalizing implementation.',
     ],
-    example: 'For example: we might design an event planning workspace that connects the campaign calendar, approved brand materials, registrations, vendor tasks, and attendee follow up in one place.',
+    example: 'For example: we might design a client workspace where a professional services team can share project milestones, collect approvals, and keep customers informed without relying on email chains.',
     output: 'A solution blueprint including screen flows, data and integration specifications, automation logic, and an implementation roadmap.',
   },
   {
@@ -57,7 +57,7 @@ const PHASES = [
       'Test complete journeys, including errors, exceptions, permissions, and data changes, rather than testing isolated screens alone.',
       'Demonstrate working software at defined checkpoints and resolve issues before release.',
     ],
-    example: 'For example: when someone registers for an event, the appropriate team receives the details, attendance records stay connected to the customer profile, and follow up tasks are created without manual copying.',
+    example: 'For example: an event organizer could connect registration, vendor schedules, attendee updates, and follow up into one workflow, while keeping existing marketing and ticketing tools.',
     output: 'Working software, connected workflows, tested capabilities, and technical documentation for the agreed solution.',
   },
   {
@@ -71,7 +71,7 @@ const PHASES = [
       'Coordinate launch and closely review early data quality, workflow completion, errors, and adoption.',
       'Complete the agreed handover or transition into support after launch, depending on the service selected.',
     ],
-    example: 'For example: an events team walks through publishing a campaign, updating an event schedule, sharing approved brand assets, and handling last minute attendee changes before launch.',
+    example: 'For example: a growing service company could introduce a new booking and dispatch process gradually, training staff and checking how exceptions are handled before rolling it out across every location.',
     output: 'A deployed and configured solution, operational guidance, training materials, launch checks, and a clear support or handover plan.',
   },
   {
@@ -85,7 +85,7 @@ const PHASES = [
       'For Grow engagements, agree quarterly priorities and deliver enhancements within contracted capacity.',
       'Document the results, tradeoffs, and next recommended actions.',
     ],
-    example: 'For example: if an event attracts registrations but few attendees become customers, we can examine the handoff between marketing and sales and improve the follow up workflow.',
+    example: 'For example: if a distributor is fulfilling orders faster but still experiencing stockouts, we can use inventory and order data to identify what needs to change in replenishment decisions.',
     output: 'A performance review against agreed objectives and, where included in your service, an ongoing enhancement roadmap.',
   },
 ] as const
